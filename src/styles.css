@@ -145,7 +145,24 @@ img { display: block; max-width: 100%; }
 .sample-layout { grid-template-columns: 1fr; }
 .sample-hero-card, .document-shell { border: 1px solid rgba(30,26,23,.08); background: rgba(255,255,255,.9); box-shadow: 0 24px 70px -34px rgba(30,26,23,.16); border-radius: 34px; }
 .sample-hero-card { padding: 34px; display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); gap: 24px; }
+.sample-layout,
+.sample-hero-card,
+.document-shell,
+.sample-hero-copy,
+.sample-meta-grid,
+.sample-meta-card,
+.document-cover,
+.document-cover > div,
+.document-section,
+.document-section-head,
+.document-grid,
+.score-row { min-width: 0; }
 .sample-hero-copy h1 { max-width: 100%; }
+.sample-hero-copy h1,
+.document-cover h2,
+.document-section-head h3,
+.sample-meta-card strong,
+.sample-meta-card p { overflow-wrap: anywhere; }
 .sample-meta-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
 .sample-meta-card strong { display: block; margin-top: 10px; font-size: 24px; color: #16304a; }
 .sample-summary-pills, .score-tags { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -155,7 +172,7 @@ img { display: block; max-width: 100%; }
 .meta-icon, .section-icon, .document-card-icon, .list-icon, .check-icon, .score-icon { display: inline-grid; place-items: center; }
 .meta-icon { width: 44px; height: 44px; border-radius: 16px; background: linear-gradient(180deg, rgba(201,168,116,.22), rgba(22,48,74,.08)); color: #16304a; font-size: 22px; }
 .document-shell { padding: 34px; }
-.document-cover { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid rgba(30,26,23,.08); }
+.document-cover { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid rgba(30,26,23,.08); flex-wrap: wrap; }
 .document-kicker, .document-section-head p { color: rgba(22,48,74,.7); }
 .document-cover h2 { font-size: clamp(2rem, 5vw, 3rem); max-width: 14ch; color: #1e1a17; }
 .document-cover span { color: rgba(30,26,23,.48); font-weight: 700; }
@@ -210,4 +227,7 @@ img { display: block; max-width: 100%; }
   .section-block, .sample-main { padding: 96px 0; }
   .contact-shell, .sample-hero-card, .document-shell { padding: 26px; }
   .form-footer, .topbar-inner { flex-direction: column; align-items: flex-start; }
+  .sample-hero-card, .document-shell { width: 100%; max-width: 100%; }
+  .sample-meta-card strong { font-size: 20px; }
+  .document-cover h2 { max-width: 100%; }
 }
