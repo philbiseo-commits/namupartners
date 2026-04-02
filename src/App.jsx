@@ -50,7 +50,14 @@ function App() {
   }, [hash]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const shouldResetToTop =
+      hash === "#home" ||
+      hash === "#top" ||
+      hash.startsWith("#/sample/");
+
+    if (shouldResetToTop) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
   }, [hash]);
 
   if (sampleSlug) return <SamplePage slug={sampleSlug} />;
