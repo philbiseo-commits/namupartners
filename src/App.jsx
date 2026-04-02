@@ -61,19 +61,24 @@ function HomePage() {
             <div className="hero-shell">
               <div className="hero-copy">
                 <span className="eyebrow dark">Brisbane Business Advisory</span>
-                <p className="mini-label">매물 분석부터 오픈 준비까지</p>
-                <h1>브리즈번 창업, 먼저 검토부터</h1>
+                <p className="mini-label">한국인 창업자를 위한 브리즈번 현지 파트너</p>
+                <h1>브리즈번 F&amp;B 창업, 매물 검토부터 오픈 준비까지</h1>
                 <p className="hero-description">
-                  매물 분석, 비용 검토, 오픈 준비까지.
-                  한국어로 빠르게 정리해드립니다.
+                  카페, 스시, 한식당, 코리안 BBQ 창업을 준비할 때
+                  리스, 설비, 비용, 오픈 순서를 한국어로 정리해드립니다.
                 </p>
+                <div className="hero-proof">
+                  <span><iconify-icon icon="solar:map-point-bold-duotone" /> Brisbane based</span>
+                  <span><iconify-icon icon="solar:chat-round-call-bold-duotone" /> 한국어 상담</span>
+                  <span><iconify-icon icon="solar:document-text-bold-duotone" /> 샘플 문서 4종 제공</span>
+                </div>
                 <div className="hero-actions">
                   <a className="cta-button cta-gold large" href="#contact">
-                    <span>매물 검토 문의하기</span>
+                    <span>브리즈번 창업 상담 문의</span>
                     <span className="cta-icon"><iconify-icon icon="solar:arrow-right-linear" /></span>
                   </a>
                   <a className="cta-button cta-ghost large" href="#deliverables">
-                    <span>분석 샘플 보기</span>
+                    <span>고객용 샘플 문서 보기</span>
                     <span className="cta-icon"><iconify-icon icon="solar:document-text-linear" /></span>
                   </a>
                 </div>
@@ -104,7 +109,7 @@ function HomePage() {
             <div className="section-copy compact-copy">
               <span className="eyebrow">Why NAMU</span>
               <h2>왜 NAMU인가요</h2>
-              <p>좋아 보이는 매물을 찾는 것보다, 잘못된 결정을 피하는 게 더 중요합니다.</p>
+              <p>창업은 좋은 매물을 찾는 일보다, 잘못된 계약과 불필요한 비용을 피하는 일이 먼저입니다.</p>
               <div className="info-grid">
                 <div className="info-card"><h3>현장 기준</h3><p>입지, 동선, 설비, 리스 조건을 같이 봅니다.</p></div>
                 <div className="info-card"><h3>빠른 판단</h3><p>계약해도 되는지 아닌지 기준을 드립니다.</p></div>
@@ -117,7 +122,11 @@ function HomePage() {
 
         <section className="section-block section-soft" id="services">
           <div className="container">
-            <div className="section-head compact-head"><span className="eyebrow light">Service</span><h2>이렇게 도와드립니다</h2></div>
+            <div className="section-head compact-head">
+              <span className="eyebrow light">Service</span>
+              <h2>이렇게 도와드립니다</h2>
+              <p className="section-subcopy">처음 상담부터 검토, 비용 정리, 오픈 준비까지 세 단계로 나눠서 진행합니다.</p>
+            </div>
             <div className="services-grid compact-services">
               {services.map(([title, text], index) => (
                 <article className={`service-card ${index === 2 ? "service-card-dark" : ""}`} key={title}>
@@ -133,6 +142,11 @@ function HomePage() {
             <div className="section-copy compact-copy">
               <span className="eyebrow">Categories</span><h2>검토 가능한 업종</h2>
               <p>업종마다 보는 기준이 다릅니다. 먼저 맞는 구조인지부터 확인합니다.</p>
+              <div className="priority-panel">
+                <p>우선 검토 추천</p>
+                <strong>카페 / 스시 / 청소업</strong>
+                <span>초기 진입 설명이 쉽고 실제 분석 사례로 연결하기 좋은 업종입니다.</span>
+              </div>
             </div>
             <div className="categories-grid compact-categories">
               {categories.map(([title, text], index) => (
@@ -149,13 +163,22 @@ function HomePage() {
           <div className="container">
             <div className="section-copy white-copy compact-copy wide-copy">
               <span className="eyebrow dark">Samples</span><h2>상담 후 이런 자료를 받게 됩니다</h2>
-              <p>버튼을 누르면 각 샘플 문서를 실제 화면처럼 볼 수 있습니다.</p>
+              <p>실제 상담 후 전달할 문서 형식에 맞춰, 판단 근거와 숫자가 보이도록 정리한 샘플입니다.</p>
             </div>
             <div className="sample-grid">
-              {sampleCards.map(([slug, title, text]) => (
+              {sampleCards.map(([slug, title, text], index) => (
                 <a className="sample-card-link" href={`#/sample/${slug}`} key={slug}>
                   <article className="sample-card">
-                    <p className="sample-kicker">Customer Sample</p><h3>{title}</h3><span>{text}</span>
+                    <div className="sample-card-topline">
+                      <p className="sample-kicker">Customer Sample</p>
+                      <span className="sample-code">0{index + 1}</span>
+                    </div>
+                    <h3>{title}</h3>
+                    <span>{text}</span>
+                    <div className="sample-meta-line">
+                      <span><iconify-icon icon="solar:document-text-bold-duotone" /> 문서형 결과물</span>
+                      <span><iconify-icon icon="solar:stars-bold-duotone" /> 고객 제출용</span>
+                    </div>
                     <div className="sample-link-row"><strong>문서 보기</strong><iconify-icon icon="solar:arrow-right-up-linear" /></div>
                   </article>
                 </a>
@@ -168,7 +191,7 @@ function HomePage() {
           <div className="container contact-shell">
             <div className="section-copy compact-copy">
               <span className="eyebrow">Contact</span><h2>문의는 간단합니다</h2>
-              <p>업종, 매물, 예산, 시기만 보내주셔도 시작할 수 있습니다.</p>
+              <p>보고 있는 매물, 원하는 업종, 예산, 시기를 보내주시면 어디부터 검토해야 할지 먼저 정리해드립니다.</p>
               <div className="contact-box"><p>Contact Information</p><span>namu.au.partners@gmail.com</span><span>Brisbane, Australia</span></div>
             </div>
             <form className="contact-form" action="mailto:namu.au.partners@gmail.com" method="post" encType="text/plain">
